@@ -42,17 +42,17 @@ const getLyric = async (artist, title) => {
     // displayLyrics(data.lyrics);
 
     //async catch system:
-    try {
-        const res = await fetch(url);
-        const data = await res.json();
-        displayLyrics(data.lyrics);
-    }
-    catch(error){
-        displayError("Sorry!! Something went wrong. Try again later.");
-    }
-    // fetch(url)
-    // .then(res => res.json())
-    // .then(data => displayLyrics(data.lyrics))
+    // try {
+    //     const res = await fetch(url);
+    //     const data = await res.json();
+    //     displayLyrics(data.lyrics);
+    // }
+    // catch(error){
+    //     displayError("Sorry!! Something went wrong. Try again later.");
+    // }
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displayLyrics(data.lyrics))
 }
 const displayError = error => {
     const errorTag = document.getElementById('error');
